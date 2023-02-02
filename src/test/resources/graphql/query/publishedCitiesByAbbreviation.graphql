@@ -1,0 +1,78 @@
+query publishedCitiesByAbbreviation($abbreviation: String!){
+    cityByAbbreviation(abbreviation: $abbreviation){
+        cityId
+        name
+        abbreviation
+        country
+        location
+        timeZone
+        published
+        image {
+            imageId
+            url
+        }
+        experiencesPage {
+            totalPages
+            content {
+                experienceId
+                archived
+                published
+                name
+                promotionalTags
+                images {
+                    imageId
+                    url
+                    imageUsage
+                }
+                summary {
+                    minPrice
+                    dateSummary
+                }
+            }
+        }
+        collections {
+            collectionId
+            active
+            featured
+            name
+            sequence
+            items {
+                sequence
+                experience {
+                    promotionalTags
+                    archived
+                    urlSlug
+                    published
+                    name
+                    experienceId
+                    description
+                    summary {
+                        minPrice
+                        dateSummary
+                    }
+                    images {
+                        imageUsage
+                        imageId
+                        url
+                    }
+                }
+            }
+        }
+        socialSharing {
+            socialSharingId
+            description
+            title
+        }
+        seo {
+            seoId
+            title
+            keywords
+            description
+        }
+        socialMedias {
+            socialMediaId
+            name
+            url
+        }
+    }
+}

@@ -1,0 +1,87 @@
+query getExperienceBySlug($slug: String!) {
+    experienceBySlug(urlSlug: $slug) {
+        experienceId
+        name
+        description
+        whatToConsider
+        faq
+        urlSlug
+        published
+        archived
+        ticketingSystem
+        requirePhoneNumber
+        requireShippingAddress
+        experiencePrompts {
+            promptId
+            experienceId
+            active
+            promptText
+            selections {
+                promptSelectionId
+                active
+                selectionText
+                sequence
+            }
+            sequence
+            totalQuantityMax
+            totalQuantityMin
+        }
+        images {
+            description
+            imageId
+            imageUsage
+            sequence
+            size
+            url
+        }
+        similarExperiences {
+            experienceId
+            name
+            urlSlug
+            images {
+                description
+                imageId
+                imageUsage
+                sequence
+                url
+            }
+        }
+        summary {
+            minPrice
+            previousMinPrice
+            dateSummary
+            eventTicketTypeSummaries {
+                description
+                name
+                price
+            }
+            locationSummary {
+                locationDescription
+                locationPoints {
+                    locationPoint
+                    locationPointDescription
+                }
+            }
+        }
+        promotionalTags
+        categories {
+            iconSource
+            name
+        }
+        affiliateWidget {
+            widgetBodyHtml
+            widgetType
+        }
+        seo {
+            seoId
+            title
+            keywords
+            description
+        }
+        socialSharing {
+            socialSharingId
+            title
+            description
+        }
+    }
+}

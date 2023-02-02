@@ -29,7 +29,7 @@ task testLoad(type: JavaExec) {
     ]
     main = 'io.gatling.app.Gatling'
     args = [
-            '--simulation', 'simulation.CreateUserSimulation',
+            '--simulation', 'simulation.LoadTest',
             '--results-folder', "${buildDir}/gatling-results"
     ]
 }
